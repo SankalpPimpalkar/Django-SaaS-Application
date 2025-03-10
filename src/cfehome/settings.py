@@ -1,4 +1,5 @@
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -8,10 +9,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w2g4anf1mzvmgt9v9l4)^w^u%ggw2*yw%!r++^p(a8^7s*fdkp'
+SECRET_KEY = config("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = str(os.environ.get("DEBUG")).lower() == 'true'
+# print(DEBUG)
+
+DEBUG = config("DJANGO_DEBUG", cast=bool)
+print(DEBUG)
 
 ALLOWED_HOSTS = [
     ".railway.app"

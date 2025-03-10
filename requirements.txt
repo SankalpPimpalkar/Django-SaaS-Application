@@ -10,6 +10,7 @@ packaging==24.2
 pydantic==2.10.6
 pydantic_core==2.27.2
 Pygments==2.19.1
+python-decouple==3.8
 PyYAML==6.0.2
 rav==0.0.9
 rich==13.9.4

@@ -5,5 +5,7 @@ scripts:
     - cd src && python manage.py makemigrations
   migrate:
     - cd src && python manage.py migrate
+  migration:
+    - cd src && python manage.py makemigrations && python manage.py migrate
   install:
     - pip install -r requirements.txt
